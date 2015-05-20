@@ -1,0 +1,39 @@
+package com.lapisz.Main;
+
+import com.lapisz.blocks.MBlocks;
+import com.lapisz.item.MItems;
+import com.lapisz.tools.ModTools;
+
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import cpw.mods.fml.common.registry.GameRegistry;
+
+public class CraftingManager {
+	public static void mainRegistry(){
+		addCraftingRec();
+		addSmeltingRec();
+	}
+	public static void addCraftingRec(){
+		//Shaped
+		GameRegistry.addRecipe(new ItemStack(MBlocks.SteelMineralBlock, 1), new Object[]{"XXX","XXX","XXX", 'X', MItems.ingotSteel});
+		GameRegistry.addRecipe(new ItemStack(Items.diamond_pickaxe, 1), new Object[]{" D ","DRD","   ", 'D', Items.diamond, 'R', Items.iron_pickaxe});
+		GameRegistry.addRecipe(new ItemStack(Items.iron_pickaxe, 1), new Object[]{" I ","ISI","   ", 'I', Items.iron_ingot, 'S', Items.stone_pickaxe});
+		GameRegistry.addRecipe(new ItemStack(Items.stone_pickaxe, 1), new Object[]{" C ","CWC","   ", 'C', Blocks.cobblestone, 'R', Items.wooden_pickaxe});
+		GameRegistry.addRecipe(new ItemStack(Blocks.command_block, 64), new Object[]{"FGF","BOB","BEB", 'F', Blocks.diamond_block, 'G', Blocks.emerald_block, 'B', Blocks.beacon, 'O', Blocks.dragon_egg, 'E', Blocks.end_stone});
+		GameRegistry.addRecipe(new ItemStack(MBlocks.ObsidianMineralBlock, 1), new Object[]{"KKK","KKK","KKK", 'K', MItems.ingotObsidian});
+		//GameRegistry.addRecipe(new ItemStack(MainRegistry.), new Object[]{})
+		//Shapeless
+		GameRegistry.addShapelessRecipe(new ItemStack(MItems.ingotSteel, 9), MBlocks.SteelMineralBlock);
+		GameRegistry.addShapelessRecipe(new ItemStack(MItems.alloySapphireRaw, 4), Items.iron_ingot, Items.iron_ingot, Items.iron_ingot, MItems.gemSapphire);
+	}
+	public static void addSmeltingRec(){
+		GameRegistry.addSmelting(Items.iron_ingot, new ItemStack(MItems.ingotSteel, 1), 280.0f);
+		GameRegistry.addSmelting(Blocks.obsidian, new ItemStack(MItems.partialObsidian, 2), 280.0f);
+		GameRegistry.addSmelting(MItems.partialObsidian, new ItemStack(MItems.ingotObsidian, 1), 140.0f);
+		GameRegistry.addSmelting(MItems.alloySapphireRaw, new ItemStack(MItems.ingotAlloySapphire, 1), 280.0f);
+		GameRegistry.addSmelting(MBlocks.SapphireOre, new ItemStack(MItems.gemSapphire, 1), 140.0f);
+	}
+	
+}

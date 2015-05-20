@@ -1,0 +1,25 @@
+package com.lapisz.Main;
+
+import com.lapisz.blocks.MBlocks;
+import com.lapisz.item.MItems;
+
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+import cpw.mods.fml.common.registry.GameRegistry;
+
+public class CraftingManager {
+	public static void mainRegistry(){
+		addCraftingRec();
+		addSmeltingRec();
+	}
+	public static void addCraftingRec(){
+		//Shaped
+		GameRegistry.addRecipe(new ItemStack(MBlocks.SteelMineralBlock, 1), new Object[]{"XXX","XXX","XXX", 'X', MItems.ingotSteel});
+		//Shapeless
+		// NOT WORKING GameRegistry.addShapelessRecipe(new ItemStack(MItems.ingotSteel, 9), new Object[]{" B ", 'B', MBlocks.SteelMineralBlock});
+	}
+	public static void addSmeltingRec(){
+		GameRegistry.addSmelting(Items.iron_ingot, new ItemStack(MItems.ingotSteel, 1), 10.0f);
+	}
+	
+}

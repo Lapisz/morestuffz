@@ -1,0 +1,47 @@
+package com.lapisz.blocks;
+
+import com.lapisz.Main.MainRegistry;
+import com.lapisz.ctabs.ModCTabs;
+import com.lapisz.lib.RefStrings;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.Block.SoundType;
+import net.minecraft.block.material.Material;
+import net.minecraft.client.audio.SoundCategory;
+import net.minecraft.client.audio.SoundList.SoundEntry;
+import net.minecraft.creativetab.CreativeTabs;
+import cpw.mods.fml.common.registry.GameRegistry;
+
+public class MBlocks {
+	public static void mainRegistry(){
+		initializeBlock();
+		registerItem();
+	}
+	
+	public static Block SteelMineralBlock;
+	public static Block ObsidianMineralBlock;
+	public static Block SapphireOre;
+	public static Block SapphireMineralBlock;
+	public static Block RubyMineralBlock;
+	
+	//CROPS
+	public static Block cropBeetroot;
+	
+	public static void initializeBlock(){
+		SteelMineralBlock = new SteelMineralBlock(Material.iron).setBlockName("blockSteel").setCreativeTab(ModCTabs.tabModBuildBlocks).setBlockTextureName(RefStrings.MODID + ":blockSteel").setHardness(7.0F).setResistance(37.5F);
+		ObsidianMineralBlock = new ObsidianMineralBlock(Material.iron).setBlockName("blockObsidian").setCreativeTab(ModCTabs.tabModBuildBlocks).setBlockTextureName(RefStrings.MODID + ":blockObsidian").setHardness(65.0F).setResistance(6000.0F);
+		SapphireMineralBlock = new SapphireMineralBlock(Material.iron).setBlockName("blockSapphire").setCreativeTab(ModCTabs.tabModBuildBlocks).setBlockTextureName(RefStrings.MODID + ":blockSapphire").setHardness(5.0F).setResistance(30.0F);
+		SapphireOre = new SapphireOre(Material.rock).setBlockName("oreSapphire").setCreativeTab(ModCTabs.tabModBuildBlocks).setBlockTextureName(RefStrings.MODID + ":oreSapphire").setHardness(3.0F).setResistance(15.0F);
+		cropBeetroot = new cropBeetroot().setBlockName("cropBeetroot").setBlockTextureName(RefStrings.MODID + ":cropBeetroot").setResistance(0.0F);
+		RubyMineralBlock = new RubyMineralBlock(Material.iron).setBlockName("blockRuby").setCreativeTab(ModCTabs.tabModBuildBlocks).setBlockTextureName(RefStrings.MODID + ":blockRuby").setHardness(5.0F).setResistance(30.0F);
+	}
+	
+	public static void registerItem(){
+		GameRegistry.registerBlock(SteelMineralBlock, SteelMineralBlock.getUnlocalizedName());
+		GameRegistry.registerBlock(ObsidianMineralBlock, ObsidianMineralBlock.getUnlocalizedName());
+		GameRegistry.registerBlock(SapphireOre, SapphireOre.getUnlocalizedName());
+		GameRegistry.registerBlock(cropBeetroot, cropBeetroot.getUnlocalizedName());
+		GameRegistry.registerBlock(SapphireMineralBlock, SapphireMineralBlock.getUnlocalizedName());
+		GameRegistry.registerBlock(RubyMineralBlock, RubyMineralBlock.getUnlocalizedName());
+	}
+}

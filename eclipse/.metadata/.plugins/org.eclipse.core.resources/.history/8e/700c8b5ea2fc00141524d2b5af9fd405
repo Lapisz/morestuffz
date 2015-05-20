@@ -1,0 +1,16 @@
+[
+{
+  "modid": "morestuffz",
+  "name": "More Stuffz",
+  "description": "Adds More Stuff to the game! Add-ons: Feature coming soon!",
+  "version": "2.2-beta2",
+  "mcversion": "1.7.10",
+  "url": "http://bit.ly/SubToLapisz",
+  "updateUrl": "http://mcaioweb.no-ip.org/morestuffz/downloads",
+  "authorList": ["Lapisz"],
+  "credits": "Lapisz",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

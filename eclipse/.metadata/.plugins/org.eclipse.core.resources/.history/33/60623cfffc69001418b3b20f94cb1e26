@@ -1,0 +1,15 @@
+package com.lapisz.Main;
+
+public class CraftingManager {
+	public static void mainRegistry(){
+		addCraftingRec();
+		addSmeltingRec();
+	}
+	public static void addCraftingRec(){
+		
+	}
+	public static void addSmeltingRec(){
+		
+	}
+	
+}

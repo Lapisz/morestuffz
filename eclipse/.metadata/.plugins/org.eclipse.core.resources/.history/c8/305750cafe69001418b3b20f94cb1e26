@@ -1,0 +1,23 @@
+package com.lapisz.Main;
+
+import com.lapisz.blocks.MBlocks;
+import com.lapisz.item.MItems;
+
+import net.minecraft.item.ItemStack;
+import cpw.mods.fml.common.registry.GameRegistry;
+
+public class CraftingManager {
+	public static void mainRegistry(){
+		addCraftingRec();
+		addSmeltingRec();
+	}
+	public static void addCraftingRec(){
+		//Shaped
+		GameRegistry.addRecipe(new ItemStack(MBlocks.SteelMineralBlock, 1), new Object[]{"XXX","XXX","XXX", 'X', MItems.ingotSteel});
+		//Shapeless
+	}
+	public static void addSmeltingRec(){
+		
+	}
+	
+}

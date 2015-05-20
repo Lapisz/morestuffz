@@ -1,0 +1,48 @@
+package com.lapisz.Main;
+
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraftforge.common.util.EnumHelper;
+
+import com.lapisz.blocks.MBlocks;
+import com.lapisz.ctabs.ModCTabs;
+import com.lapisz.item.MItems;
+import com.lapisz.lib.RefStrings;
+import com.lapisz.world.MWorld;
+
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.LanguageRegistry;
+
+@Mod(modid = RefStrings.MODID, name = RefStrings.NAME, version = RefStrings.VERSION)
+public class MainRegistry {
+
+	
+	@SidedProxy(clientSide = RefStrings.CLIENTSIDE, serverSide = RefStrings.SERVERSIDE)
+	public static ServerProxy proxy;
+	
+	@EventHandler
+	public static void PreLoad(FMLPreInitializationEvent PreEvent) {
+			MItems.mainRegistry();
+			MBlocks.mainRegistry();
+			MWorld.mainRegistry();
+			ModCTabs.initializeTabs();
+			CraftingManager.mainRegistry();
+			proxy.registerRenderInfo();
+	}
+	
+	@EventHandler
+	public static void load(FMLInitializationEvent event) {
+		LanguageRegistry.instance().addStringLocalization("itemGroup.tabMoreStuffzItems", "en_US", "MoreStuffz Items");
+		LanguageRegistry.instance().addStringLocalization("itemGroup.tabMoreStuffzBlocks", "en_US", "MoreStuffz Blocks");
+	}
+	@EventHandler
+	public static void PostLoad(FMLPostInitializationEvent PostEvent) {
+
+	}
+}
